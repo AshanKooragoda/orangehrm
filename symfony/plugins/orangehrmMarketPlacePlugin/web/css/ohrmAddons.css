@@ -1,0 +1,33 @@
+.circle {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+#title {
+    font-weight: bold;
+    font-size: medium;
+}
+
+#addonHolder {
+    padding-top: 0px !important;
+}
+
+.image {
+    width: 12%;
+    float: left;
+}
+
+.details {
+    width: 80%;
+    float: left;
+    padding-bottom: 10px;
+}
+
+#btn1 {
+    width: 10%
+}
+
+#btn2 {
+    width: 10%
+}

@@ -1,0 +1,9 @@
+addon_list:
+  url:   /marketPlace/addons
+  param: { module: marketPlace, action: ohrmAddons }
+  with_wildcard_routes: true
+
+addon_detail:
+  url:   /marketPlace/addonDetail/*
+  param: { module: marketPlace, action: addonDetail}
+#  with_wildcard_routes: true

@@ -16,4 +16,52 @@
  * if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA
  */
+use_stylesheet(plugin_web_path('orangehrmMarketPlacePlugin', 'css/ohrmAddons.css'));
 ?>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="box">
+    <div class="head">
+        <h1 id="menu">OrangeHRM Addons</h1>
+    </div>
+    <div class="inner">
+        <?php foreach ($addonList as $addon) { ?>
+            <div class="row">
+                <div class="inner container" id="addonHolder">
+                    <div id="column" class="image">
+                        <img class="circle" src="
+                        <?php echo plugin_web_path("orangehrmMarketPlacePlugin", "images/SampleJPGImage_500kbmb.jpg"); ?>"/>
+                    </div>
+                    <div id="column" class="details">
+                        <div class="row">
+                            <label id="title">Addon title : </label>
+                            <label><?php echo __($addon['title']); ?></label>
+                        </div>
+                        <div class="row">
+                            <label id="title">Summary : </label>
+                            <label><?php echo __($addon['summary']); ?></label>
+                        </div>
+                        <div class="row">
+                            <label id="title">Released Date: </label>
+                            <label><?php echo __($addon['date']); ?></label>
+                        </div>
+                    </div>
+                    <div id="column" class="button">
+                        <input type="button" name="Submit" class="btnInstall" id="btn1" value="<?php
+                        $ins = $sf_data->getRaw("installedAddons");
+                        if (in_array($addon['id'], $ins)) {
+                            echo __("Uninstall");
+                        } else {
+                            echo __("Install");
+                        } ?>"/>
+                        <input type="button" name="Submit" class="btnDetail" id="btn2"
+                               value="<?php echo __('Detail'); ?>"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container"></div>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
